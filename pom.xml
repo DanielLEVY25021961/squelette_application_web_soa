@@ -51,8 +51,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	<!-- URL éventuelle permettant de se connecter à l'application -->	
 	<url>http://localhost:8080/squelette_application_web_soa</url>
 
-
-
     <!-- ================================================ -->
 	<!--                    PROPERTIEs                    -->
 	<!-- Préciser ici les propriétés générales du projet. -->
@@ -115,8 +113,8 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			</dependency>
 	    </dependencies>
 	</dependencyManagement>
-	
-	
+
+
 	<!-- =============================================== -->
 	<!--                DEPENDANCEs                      -->
 	<!-- Gestion des dépendances utilisées par le projet -->
@@ -394,16 +392,16 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		    <scope>compile</scope>
 		</dependency>
 		
-		
+
 		<!-- ====================================================== -->
 		<!--        DEPENDANCES POUR Bases de Données  				-->
 		<!-- ====================================================== -->
 		<!-- POSTGRESQL -->
-		<!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency>
-		    <groupId>postgresql</groupId>
+		    <groupId>org.postgresql</groupId>
 		    <artifactId>postgresql</artifactId>
-		    <version>9.1-901-1.jdbc4</version>
+		    <version>42.1.4</version>
 		    <scope>compile</scope>
 		</dependency>
 		<!-- MySQL -->
@@ -422,7 +420,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		    <version>${hsqldb.version}</version>
 		    <scope>test</scope>		    
 		</dependency>
-				
+
 	</dependencies>
 	
 	
@@ -553,7 +551,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			    <artifactId>maven-antrun-plugin</artifactId>
 			    <version>1.8</version>
 			</plugin>
-			
+
 			<!-- Utilisé en fin de build des war, jar, ... -->
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-assembly-plugin -->
 			<plugin>
@@ -561,7 +559,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				    <artifactId>maven-assembly-plugin</artifactId>
 				    <version>3.1.0</version>
 			</plugin>
-			
+
 			<!-- IMPORTANT - Gère les dépendances -->
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-dependency-plugin -->
 			<plugin>
@@ -569,7 +567,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				    <artifactId>maven-dependency-plugin</artifactId>
 				    <version>3.0.1</version>
 			</plugin>
-			
+
 			<!-- Gestion des versions de livrables (artefacts) -->
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-release-plugin -->
 			<plugin>
@@ -618,7 +616,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<!-- Build des War -->
 			<!-- ATTENTION en fonction de la balise packaging - METTRE PLUGIN JAR SI APPLI DESKTOP -->
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
@@ -646,9 +644,9 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			<!-- Compilation des sources en classes. -->
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
 			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-compiler-plugin</artifactId>
-			    <version>3.7.0</version>
+				<groupId>org.apache.maven.plugins</groupId>
+   				<artifactId>maven-compiler-plugin</artifactId>
+  					<version>3.7.0</version>
 				<executions>
 					<execution>
 						<id>default-compile</id>
@@ -687,7 +685,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 					<target>1.8</target>
 				</configuration>					
 			</plugin>
-			
+
 			<!-- Tests unitaires -->
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
 			<plugin>
@@ -721,7 +719,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<!-- Déploiement sur le serveur applicatif. -->
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-deploy-plugin -->
 			<plugin>
@@ -738,18 +736,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 					</execution>
 				</executions>
 			</plugin>
-			
-			<!-- Création du site web du projet. -->
-			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
-			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-site-plugin</artifactId>
-			    <version>3.6</version>
-			    <configuration>
-     					<outputEncoding>UTF-8</outputEncoding>
-  					 </configuration>
-			</plugin>
-							
+
 		</plugins>
 
 	</build>
@@ -758,7 +745,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	<!-- ========= -->
 	<!-- REPORTING -->
 	<!-- ========= -->	
-	<reporting>	
+	<reporting>
 		<outputDirectory>${project.build.directory}/site</outputDirectory>
 		<plugins>
 			<plugin>
@@ -789,5 +776,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			</plugin>
 		</plugins>
 	</reporting>
-		
+
+	
 </project>
