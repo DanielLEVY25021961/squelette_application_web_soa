@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<Context>
+
+	<!-- Ce context.xml surchargeant celui de tomcat définit un pool de connexion à la base indiquée.  -->
+
+			<!-- ================================================== -->
+			<!-- Paramètres de connexion JDBC à la base de données -->
+			<!-- ================================================== -->
+
+	
+		    <!-- ========================================================= -->
+		    <!--    postgresql 9.6.4 - port : 5432 - [postgres, postgres]  -->
+		    <!-- ========================================================= -->
+				<!-- pour une base de données postgres  -->
+	<Resource auth="Container"
+    	name="jdbc/dsSquelette_application_web_soa"
+		url="jdbc:postgresql://localhost:5432/base-squelette_application_web_soa"
+        username="postgres"
+        password="postgres"
+        type="javax.sql.DataSource"
+        driverClassName="org.postgresql.Driver"
+        maxTotal="10"
+        maxIdle="5"
+        maxWaitMillis="-1"
+        removeAbandonedOnBorrow="true"
+        removeAbandonedOnMaintenance="true"
+        removeAbandonedTimeout="60"
+        logAbandoned="true"/>
+
+	
+			 <!-- ========================================================= -->
+			 <!--         mySql 5.7.19.0 - port : 3306 - [root, root]       -->
+			 <!-- ========================================================= -->  
+<!-- 	<Resource auth="Container" -->
+<!--     	name="jdbc/dsAppliTutoWebSpringPouiller" -->
+<!-- 		url="jdbc:mysql://localhost:3306/base-squelette_application_web_soa" -->
+<!--         username="root" -->
+<!--         password="root" -->
+<!--         type="javax.sql.DataSource" -->
+<!--         driverClassName="com.mysql.jdbc.Driver" -->
+<!--         maxActive="10" -->
+<!--         maxIdle="5" -->
+<!--         maxWait="-1" -->
+<!--         removeAbandoned="true" -->
+<!--         removeAbandonedTimeout="60" -->
+<!--         logAbandoned="true"/> -->
+			  	
+	
+			<!-- ========================================================= -->
+		    <!--                     hsqldb 2.4.0                          -->
+		    <!-- ========================================================= -->
+	
+<!-- 	<Resource auth="Container" -->
+<!--     	name="jdbc/dsAppliTutoWebSpringPouiller" -->
+<!-- 		url="jdbc:hsqldb:file:D:/Donnees/eclipse/eclipseworkspace_neon/squelette_application_web_soa/data/base-squelette_application_web_soa" -->
+<!--         username="sa" -->
+<!--         password="" -->
+<!--         type="javax.sql.DataSource" -->
+<!--         driverClassName="org.hsqldb.jdbc.JDBCDriver" -->
+<!--         maxActive="10" -->
+<!--         maxIdle="5" -->
+<!--         maxWait="-1" -->
+<!--         removeAbandoned="true" -->
+<!--         removeAbandonedTimeout="60" -->
+<!--         logAbandoned="true"/> -->
+
+
+
+</Context>
