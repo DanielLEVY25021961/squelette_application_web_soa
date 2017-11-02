@@ -37,7 +37,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	<!-- Résultat du Packaging (forme du livrable). Ici war -->
 	<packaging>war</packaging>
 
-	
+
 	<!-- ========================================================== -->
 	<!-- NOM DU LIVRABLE GENERE PAR MAVEN                           -->
 	<!-- Préciser le nom du livrable que Maven doit produire        -->
@@ -73,7 +73,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		<!-- 		VERSIONS DES COMPOSANTS DANS LES DEPENDANCES		-->
 		<!-- ========================================================== -->
 		<!-- 				Version de SPRING 							-->
-		<spring.version>5.0.0.RELEASE</spring.version>
+		<spring.version>5.0.1.RELEASE</spring.version>
 		<!-- 				Version d'HIBERNATE 						-->
 		<hibernate.version>5.2.11.Final</hibernate.version>
 		<!-- 			Version d'HIBERNATE VALIDATOR				    -->
@@ -253,6 +253,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		    <version>${jsp.version}</version>
 		    <scope>provided</scope>
 		</dependency>
+<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
+		<dependency>
+		    <groupId>javax.servlet.jsp</groupId>
+		    <artifactId>javax.servlet.jsp-api</artifactId>
+		    <version>2.3.2-b02</version>
+		    <scope>provided</scope>
+		</dependency>
 		
 
 
@@ -310,7 +317,12 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		    <artifactId>spring-orm</artifactId>
 		    <scope>compile</scope>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <scope>test</scope>
+		</dependency>
 
 
 		<!-- ================================ -->
@@ -409,7 +421,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		<dependency>
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
-		    <version>8.0.7-dmr</version>
+		    <version>8.0.8-dmr</version>
 		    <scope>compile</scope>
 		</dependency>
 		<!-- HSQLDB -->		
@@ -634,7 +646,8 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 					</execution>
 				</executions>
 				<configuration>
-					<warSourceDirectory>WebContent</warSourceDirectory>
+					<!-- ATTENTION : CHEMIN DES RESSOURCES WEB DE L'APPLICATION -->
+					<warSourceDirectory>${project.basedir}/src/main/webapp</warSourceDirectory>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
